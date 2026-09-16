@@ -9,11 +9,12 @@ namespace YesChef.Core
     {
         public static InputReader Instance { get; private set; }
 
+        // Gameplay Events
         public event Action<Vector2> OnMoveEvent;
         public event Action OnInteractEvent;
         public event Action OnPauseEvent;
 
-        // Debug actions for feeling & juice testing
+        // Feedback Testing Events
         public event Action OnDebugCelebration;
         public event Action OnDebugSadTilt;
         public event Action OnDebugStopSquash;
@@ -63,14 +64,13 @@ namespace YesChef.Core
             }
         }
 
-        // Unused template actions implemented to satisfy IGameplayActions
-        public void OnLook(InputAction.CallbackContext context) { }
-        public void OnAttack(InputAction.CallbackContext context) { }
-        public void OnCrouch(InputAction.CallbackContext context) { }
-        public void OnJump(InputAction.CallbackContext context) { }
-        public void OnPrevious(InputAction.CallbackContext context) { }
-        public void OnNext(InputAction.CallbackContext context) { }
-        public void OnSprint(InputAction.CallbackContext context) { }
+        public void OnPause(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                OnPauseEvent?.Invoke();
+            }
+        }
         #endregion
 
         #region Debug Actions
