@@ -352,11 +352,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 297807081}
+  - component: {fileID: 297807088}
   - component: {fileID: 297807080}
   - component: {fileID: 297807082}
+  - component: {fileID: 297807086}
+  - component: {fileID: 297807085}
+  - component: {fileID: 297807084}
+  - component: {fileID: 297807087}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,6 +433,82 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &297807084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297807079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f3faf0461193c42a64b333278da772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YesChef.Player.PlayerInteraction
+  interactionCenter: {fileID: 1815459312}
+  checkRadius: 1
+  forwardOffset: 0.8
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &297807085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297807079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: affcdf275690cf74a865a1be0134a950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YesChef.Player.PlayerInventory
+  holdPoint: {fileID: 1815459312}
+--- !u!114 &297807086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297807079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d7f8b309da945640bffde7253972fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YesChef.Player.PlayerController
+  moveSpeed: 8.5
+  rotationSpeed: 16
+--- !u!114 &297807087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297807079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29dd24cafedf12f42929c023bdb8e067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YesChef.Feedback.PlayerVisualFeedback
+  visualsRoot: {fileID: 1935561187}
+  controller: {fileID: 297807086}
+  bobFrequency: 14
+  bobHeight: 0.08
+  squashScale: {x: 1.15, y: 0.85, z: 1.15}
+  recoverSpeed: 10
+--- !u!114 &297807088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297807079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d8c37d55b8b4204ab6c077e1f2e8d8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YesChef.Feedback.DebugFeedbackTester
+  visualFeedback: {fileID: 297807087}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,6 +1284,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141046736}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1163464898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1163464899}
+  m_Layer: 0
+  m_Name: MANAGERS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1163464899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163464898}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1885896441}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1815459311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,6 +1347,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 297807081}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1885896440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1885896441}
+  - component: {fileID: 1885896442}
+  m_Layer: 0
+  m_Name: InputReader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1885896441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885896440}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1163464899}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1885896442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885896440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37efe2dfaf1bf354c9f06843fc7da15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YesChef.Core.InputReader
 --- !u!1 &1935561186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,3 +1523,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 718349758}
   - {fileID: 297807081}
+  - {fileID: 1163464899}
